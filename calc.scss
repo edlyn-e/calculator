@@ -1,0 +1,103 @@
+$border: 3px solid #e3c0c7;
+$background: #ead6d5;
+$screen: #6c7448;
+$btn: #e9e3e5;
+$shadow: #927c7e;
+$text: #686266;
+$focus: #b8a0a3;
+
+$screen-bkg: #29261c;
+$hover: #decfd4;
+
+$planning: 2px solid black;
+
+* {
+    font-family: "Michroma", sans-serif;
+    color: #686266;
+}
+h1 {
+    text-align: center;
+    font-size: x-large;
+}
+
+#signOff {
+    padding: 3vh;
+    text-align: center;
+    font-size: small;
+}
+
+.calc {
+    border: $border;
+    background-color: #e3c0c7;
+    box-shadow: 0px 10px 8px $shadow;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    height: 80vh;
+    width: 52vh;
+    margin: auto;
+    margin-top: 5vh;
+
+    &__screen-bckg {
+        display: flex;
+
+        background-color: $screen-bkg;
+        border-radius: 50px;
+        height: 12vh;
+        width: 50vh;
+        margin: 1vh;
+    }
+    &__screen {
+        margin: auto;
+
+        &--display {
+            background-color: $screen;
+            border-radius: 1vh;
+            height: 8vh;
+            width: 35vh;
+
+            font-size: xx-large;
+            font-weight: bolder;
+            color: $screen-bkg;
+            padding-left: 1vh;
+        }
+    }
+
+    &__keys {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        margin: 1vh;
+        margin-top: 4vh;
+    }
+
+    &__btn-top {
+        height: 10vh;
+        width: 10vh;
+        margin: 1vh;
+        border: 2px solid #e9e3e5;
+        border-radius: 50%;
+        box-shadow: 3px 10px $shadow;
+    }
+    &__btn {
+        @extend .calc__btn-top;
+        font-size: x-large;
+    }
+
+    &__btn-top:hover {
+        background-color: $hover;
+    }
+
+    &__btn-top:active {
+        background-color: $hover;
+        box-shadow: inset 5px 5px $shadow;
+    }
+
+    &__btn-operator:focus {
+        background-color: $focus;
+        box-shadow: inset 5px 5px $shadow;
+    }
+}
