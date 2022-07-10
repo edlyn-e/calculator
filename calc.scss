@@ -1,6 +1,8 @@
-$border: 3px solid #e3c0c7;
-$background: #ead6d5;
-$screen: #6c7448;
+// commonly used properties
+
+$border: 2px solid #e3c0c7;
+$background: #e3c0c7;
+$screen: #8a9268;
 $btn: #e9e3e5;
 $shadow: #927c7e;
 $text: #686266;
@@ -9,11 +11,12 @@ $focus: #b8a0a3;
 $screen-bkg: #29261c;
 $hover: #decfd4;
 
+// border used for planning, and seeing how the element moves
 $planning: 2px solid black;
 
 * {
     font-family: "Michroma", sans-serif;
-    color: #686266;
+    color: $text;
 }
 h1 {
     text-align: center;
@@ -28,7 +31,7 @@ h1 {
 
 .calc {
     border: $border;
-    background-color: #e3c0c7;
+    background-color: $background;
     box-shadow: 0px 10px 8px $shadow;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
@@ -51,17 +54,29 @@ h1 {
     }
     &__screen {
         margin: auto;
+        position: fixed;
 
         &--display {
             background-color: $screen;
             border-radius: 1vh;
             height: 8vh;
-            width: 35vh;
+            width: 40vh;
 
-            font-size: xx-large;
+            font-size: x-large;
             font-weight: bolder;
+            text-align: right;
+            padding: 0vh 1vh;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            position: absolute;
+            top: 1.9vh;
+            left: 4.5vh;
+        }
+
+        &--display-text {
             color: $screen-bkg;
-            padding-left: 1vh;
         }
     }
 
@@ -78,7 +93,7 @@ h1 {
         height: 10vh;
         width: 10vh;
         margin: 1vh;
-        border: 2px solid #e9e3e5;
+        border: $border;
         border-radius: 50%;
         box-shadow: 3px 10px $shadow;
     }

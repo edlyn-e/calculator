@@ -11,48 +11,73 @@
             rel="stylesheet"
         />
     </head>
+
     <body>
         <main class="calc">
             <section class="calc__screen-bckg">
                 <div class="calc__screen">
                     <!-- Calculator Screen here -->
-                    <input type="text" class="calc__screen--display" />
+
+                    <div class="calc__screen--display current-operand">
+                        <p class="calc__screen--display-text">123</p>
+                    </div>
+                    <div class="calc__screen--display previous-operand" hidden>
+                        <p class="calc__screen--display-text">456</p>
+                    </div>
                 </div>
             </section>
             <section class="calc__keys">
+                <!-- top row: GT, Backspace, CE, On/C -->
                 <div class="calc__row">
-                    <button class="calc__btn-top">GT</button>
-                    <button class="calc__btn-top">BKSP</button>
-                    <button class="calc__btn-top">CE</button>
-                    <button class="calc__btn-top">ON/C</button>
+                    <button class="calc__btn-top grand-total">GT</button>
+                    <button class="calc__btn-top backspace">&larr;</button>
+                    <!-- ^ backspace button  -->
+                    <button class="calc__btn-top clear-entry">CE</button>
+                    <button class="calc__btn-top reset">ON/C</button>
                 </div>
+                <!-- row keys: 7, 8, 9, /  -->
                 <div class="calc__row">
-                    <button class="calc__btn">7</button>
-                    <button class="calc__btn">8</button>
-                    <button class="calc__btn">9</button>
-                    <button class="calc__btn calc__btn-operator">/</button>
+                    <button class="calc__btn number">7</button>
+                    <button class="calc__btn number">8</button>
+                    <button class="calc__btn number">9</button>
+                    <button class="calc__btn calc__btn-operator operator">
+                        &#247;
+                    </button>
+                    <!-- ^ divide button -->
                 </div>
+                <!-- row keys: 4, 5, 6, x  -->
                 <div class="calc__row">
-                    <button class="calc__btn">4</button>
-                    <button class="calc__btn">5</button>
-                    <button class="calc__btn">6</button>
-                    <button class="calc__btn calc__btn-operator">*</button>
+                    <button class="calc__btn number">4</button>
+                    <button class="calc__btn number">5</button>
+                    <button class="calc__btn number">6</button>
+                    <button class="calc__btn calc__btn-operator operator">
+                        &#215;
+                    </button>
+                    <!-- ^ multiply button  -->
                 </div>
+                <!-- row keys: 1, 2, 3, - -->
                 <div class="calc__row">
-                    <button class="calc__btn">1</button>
-                    <button class="calc__btn">2</button>
-                    <button class="calc__btn">3</button>
-                    <button class="calc__btn calc__btn-operator">-</button>
+                    <button class="calc__btn number">1</button>
+                    <button class="calc__btn number">2</button>
+                    <button class="calc__btn number">3</button>
+                    <button class="calc__btn calc__btn-operator operator">
+                        &#8722;
+                    </button>
+                    <!-- ^ subract button  -->
                 </div>
+                <!-- last row: 0, ., =, + -->
                 <div class="calc__row">
-                    <button class="calc__btn">0</button>
-                    <button class="calc__btn">.</button>
-                    <button class="calc__btn">=</button>
-                    <button class="calc__btn calc__btn-operator">+</button>
+                    <button class="calc__btn number">0</button>
+                    <button class="calc__btn number decimal">.</button>
+                    <button class="calc__btn equals">&equals;</button>
+                    <button class="calc__btn calc__btn-operator operator">
+                        &plus;
+                    </button>
+                    <!-- ^ plus button  -->
                 </div>
             </section>
         </main>
         <p id="signOff">built by edlyn-e</p>
     </body>
-    <script src="./calc.js"></script>
+    <script src="calc.js"></script>
 </html>
