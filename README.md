@@ -52,7 +52,7 @@ Having a plan is key to achieving goals. In this section, I have broken down the
     - :white_check_mark:  number/s should display on the screen
     - :white_check_mark:  number/s should be saved in app's memory until 'ON/C' button is registered
     - :white_check_mark:  0 (zero) should automatically be replaced when at the beginning of a whole number
--   there should be a 10 digit limit (11 character limit inclusive of decimal) for entries and solutions
+-  :white_check_mark: there should be a 10 digit limit (11 character limit inclusive of decimal) for entries and solutions
 -  :white_square_button: when the last digit on the entry is a zero (0), the zero should automatically be removed
     - this is invalid as it would mean the user cannot enter numbers that need to end with a 0 i.e. 10, 100, etc. 
     
