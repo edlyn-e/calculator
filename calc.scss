@@ -66,9 +66,6 @@ h1 {
             font-weight: bolder;
             text-align: right;
             padding: 0vh 1vh;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
 
             position: absolute;
             top: 1.9vh;
@@ -77,6 +74,9 @@ h1 {
 
         &--display-text {
             color: $screen-bkg;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
     }
 

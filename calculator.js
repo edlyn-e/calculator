@@ -30,8 +30,10 @@ class Calculator {
     // turning the number data into a string to be able to easily append numbers at the end
     // if statements to firstent user from entering more than one decimal in the display
     appendNumber(number) {
+        if (this.firstValue.length > 10) return;
         if (number === "." && this.firstValue.includes(".")) return;
         if (this.firstValue.length > 0 && this.firstValue[0] === "0") {
+            // if the number entered is 0 and the user is trying to type more 0's, the calculator won't register the additional zeros to keep the interface neat and tidy
             this.firstValue = this.firstValue.substring(
                 1,
                 this.firstValue.length,
@@ -54,6 +56,7 @@ class Calculator {
     // the calculation method
     calculate() {
         let calculation;
+
         const first = parseFloat(this.secondValue);
         const second = parseFloat(this.firstValue);
         if (isNaN(first) || isNaN(second)) return; //if the second or firstious operand are somehow not numbers, the user will not be able to continue
@@ -78,7 +81,7 @@ class Calculator {
                 return;
         }
 
-        this.firstValue = calculation;
+        this.firstValue = calculation.toString().slice(0, 11);
         this.operator = undefined;
         this.secondValue = "";
     }
@@ -101,7 +104,7 @@ const clearEntryButton = document.querySelector(".clear-entry");
 const firstValueTextElement = document.querySelector(".first-value");
 const secondValueTextElement = document.querySelector(".second-value");
 // secondValueText a hidden property in the HTML and somewhere to store the firstious operand so it disappears and increases communication of interactivity
-const onCE = document.querySelector(".reset");
+const onC = document.querySelector(".reset");
 const gt = document.getElementsByClassName("grand-total");
 
 const calculator = new Calculator(
@@ -133,7 +136,7 @@ clearEntryButton.addEventListener("click", (button) => {
     calculator.updateDisplay();
 });
 
-onCE.addEventListener("click", (button) => {
+onC.addEventListener("click", (button) => {
     calculator.clear();
     calculator.updateDisplay();
 });

@@ -48,15 +48,15 @@ h1 {
   font-weight: bolder;
   text-align: right;
   padding: 0vh 1vh;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   position: absolute;
   top: 1.9vh;
   left: 4.5vh;
 }
 .calc__screen--display-text {
   color: #29261c;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .calc__keys {
   display: flex;
