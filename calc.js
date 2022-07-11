@@ -3,99 +3,110 @@
 */
 
 class Calculator {
-    constructor(previousOperandTextElement, currentOperandTextElement) {
-        (this.previousOperandTextElement = previousOperandTextElement),
-            (this.currentOperandTextElement = currentOperandTextElement);
+    constructor(secondValueTextElement, firstValueTextElement) {
+        (this.secondValueTextElement = secondValueTextElement),
+            (this.firstValueTextElement = firstValueTextElement);
         this.clear();
     }
 
     // clears the screen/display to a blank slate ready for a new entry of numbers
     clear() {
-        (this.currentOperand = ""),
-            (this.previousOperand = ""),
-            (this.operation = undefined);
+        (this.firstValue = ""),
+            (this.secondValue = ""),
+            (this.operator = undefined);
+    }
+
+    // clears the entry of that value, but not the whole equation.
+    clearEntry() {
+        this.firstValue = this.firstValue.slice(-1, 0);
     }
 
     // erases only one number at a time
     // creating turning the numbers into a string so we're able to delete characters one at a time
     delete() {
-        this.currentOperand = this.currentOperand.toString().slice(0, -1);
+        this.firstValue = this.firstValue.toString().slice(0, -1);
     }
 
     // turning the number data into a string to be able to easily append numbers at the end
-    // if statements to prevent user from entering more than one decimal in the display
+    // if statements to firstent user from entering more than one decimal in the display
     appendNumber(number) {
-        if (number === "." && this.currentOperand.includes(".")) return;
-        this.currentOperand =
-            this.currentOperand.toString() + number.toString();
+        if (number === "." && this.firstValue.includes(".")) return;
+        if (this.firstValue.length > 0 && this.firstValue[0] === "0") {
+            this.firstValue = this.firstValue.substring(
+                1,
+                this.firstValue.length,
+            );
+        }
+        this.firstValue = this.firstValue.toString() + number.toString();
     }
 
     // if the user doesn't choose an operator, then the calculation won't be able to proceed
-    chooseOperation(operation) {
-        if (this.currentOperand === "") return;
-        if (this.previousOperand !== "") {
+    chooseOperator(operator) {
+        if (this.firstValue === "") return;
+        if (this.secondValue !== "") {
             this.calculate();
         }
-        this.operation = operation;
-        this.previousOperand = this.currentOperand; // prev becomes current so we can enter the next half of the calculation
-        this.currentOperand = ""; // this currentOperand then becomes blank ready to be filled
+        this.operator = operator;
+        this.secondValue = this.firstValue; // first becomes second so we can enter the next half of the calculation
+        this.firstValue = ""; // this firstValue then becomes blank ready to be filled
     }
 
     // the calculation method
     calculate() {
         let calculation;
-        const prev = parseFloat(this.previousOperand);
-        const current = parseFloat(this.currentOperand);
-        if (isNaN(prev) || isNaN(current)) return; //if the current or previous operand are somehow not numbers, the user will not be able to continue
+        const first = parseFloat(this.secondValue);
+        const second = parseFloat(this.firstValue);
+        if (isNaN(first) || isNaN(second)) return; //if the second or firstious operand are somehow not numbers, the user will not be able to continue
 
-        switch (this.operation) {
+        switch (this.operator) {
             case "+":
-                calculation = prev + current;
+                calculation = first + second;
                 break;
 
             case "−":
-                calculation = prev - current;
+                calculation = first - second;
                 break;
 
             case "×":
-                calculation = prev * current;
+                calculation = first * second;
                 break;
 
             case "÷":
-                calculation = prev / current;
+                calculation = first / second;
                 break;
             default:
                 return;
         }
 
-        this.currentOperand = calculation;
-        this.operation = undefined;
-        this.previousOperand = "";
+        this.firstValue = calculation;
+        this.operator = undefined;
+        this.secondValue = "";
     }
 
-    // updates display with the values and assigns the text to "this.currentOperand"
+    // updates display with the values and assigns the text to "this.firstValue"
     updateDisplay() {
-        this.currentOperandTextElement.innerText = this.currentOperand;
-        if (this.operation != null) {
-            this.previousOperandTextElement.innerText = this.previousOperand;
+        this.firstValueTextElement.innerText = this.firstValue;
+        if (this.operator != null) {
+            this.secondValueTextElement.innerText = this.secondValue;
         }
     }
 }
 
 // Interacting with the dom
 const numberButtons = document.querySelectorAll(".number"); // NodeList(11)
-const operationButtons = document.querySelectorAll(".operator"); // NodeList (4)
+const operatorButtons = document.querySelectorAll(".operator"); // NodeList (4)
 const equalsButton = document.querySelector(".equals");
 const deleteButton = document.querySelector(".backspace");
 const clearEntryButton = document.querySelector(".clear-entry");
-const currentOperandTextElement = document.querySelector(".current-operand");
-const previousOperandTextElement = document.querySelector(".previous-operand"); // a hidden property in the HTML and somewhere to store the previous operand so it disappears and increases communication of interactivity
+const firstValueTextElement = document.querySelector(".first-value");
+const secondValueTextElement = document.querySelector(".second-value");
+// secondValueText a hidden property in the HTML and somewhere to store the firstious operand so it disappears and increases communication of interactivity
 const onCE = document.querySelector(".reset");
 const gt = document.getElementsByClassName("grand-total");
 
 const calculator = new Calculator(
-    previousOperandTextElement,
-    currentOperandTextElement,
+    secondValueTextElement,
+    firstValueTextElement,
 );
 
 numberButtons.forEach((button) => {
@@ -105,9 +116,9 @@ numberButtons.forEach((button) => {
     });
 });
 
-operationButtons.forEach((button) => {
+operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        calculator.chooseOperation(button.innerText);
+        calculator.chooseOperator(button.innerText);
         calculator.updateDisplay();
     });
 });
@@ -118,7 +129,7 @@ equalsButton.addEventListener("click", (button) => {
 });
 
 clearEntryButton.addEventListener("click", (button) => {
-    calculator.clear();
+    calculator.clearEntry();
     calculator.updateDisplay();
 });
 
