@@ -28,7 +28,7 @@ class Calculator {
     }
 
     // turning the number data into a string to be able to easily append numbers at the end
-    // if statements to firstent user from entering more than one decimal in the display
+    // if statements to current user from entering more than one decimal in the display
     appendNumber(number) {
         if (this.firstValue.length > 10) return;
         if (number === "." && this.firstValue.includes(".")) return;
@@ -59,7 +59,7 @@ class Calculator {
 
         const first = parseFloat(this.secondValue);
         const second = parseFloat(this.firstValue);
-        if (isNaN(first) || isNaN(second)) return; //if the second or firstious operand are somehow not numbers, the user will not be able to continue
+        if (isNaN(first) || isNaN(second)) return; //if the second or first operand are somehow not numbers, the user will not be able to continue
 
         switch (this.operator) {
             case "+":
@@ -103,7 +103,7 @@ const deleteButton = document.querySelector(".backspace");
 const clearEntryButton = document.querySelector(".clear-entry");
 const firstValueTextElement = document.querySelector(".first-value");
 const secondValueTextElement = document.querySelector(".second-value");
-// secondValueText a hidden property in the HTML and somewhere to store the firstious operand so it disappears and increases communication of interactivity
+// secondValueText a hidden property in the HTML and somewhere to store the other operand so it disappears and increases communication of interactivity
 const onC = document.querySelector(".reset");
 const gt = document.getElementsByClassName("grand-total");
 
