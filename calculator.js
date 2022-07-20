@@ -126,22 +126,22 @@ operatorButtons.forEach((button) => {
     });
 });
 
-equalsButton.addEventListener("click", (button) => {
+equalsButton.addEventListener("click", () => {
     calculator.calculate();
     calculator.updateDisplay();
 });
 
-clearEntryButton.addEventListener("click", (button) => {
+clearEntryButton.addEventListener("click", () => {
     calculator.clearEntry();
     calculator.updateDisplay();
 });
 
-onC.addEventListener("click", (button) => {
+onC.addEventListener("click", () => {
     calculator.clear();
     calculator.updateDisplay();
 });
 
-deleteButton.addEventListener("click", (button) => {
+deleteButton.addEventListener("click", () => {
     calculator.delete();
     calculator.updateDisplay();
 });
