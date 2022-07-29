@@ -81,7 +81,7 @@ class Calculator {
                 return;
         }
 
-        this.firstValue = calculation.toString().slice(0, 11);
+        this.firstValue = calculation.toExponential(5);
         this.operator = undefined;
         this.secondValue = "";
     }
