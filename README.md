@@ -89,6 +89,10 @@ Having a plan is key to achieving goals. In this section, I have broken down the
 
 Note: I had used a mixture of viewport height, pixels and percentages. At the time it seems like a good idea, however, in hindsight, it doesn't take into account all screen sizes. As such, if I were to do this project again, I would stick to one medium of measurement (e.g. pixels) with the exception of using percentage for my border radius to get my perfect circles.
 
+-   Currently if the user enters the decimal ( . ), it replaces the the zero. This doesn't effect the functionality of the application, however, it does create an odd interface.
+
+    -   For example: instead of "0.123", the app displays ".123"
+
 ## Resources
 
 A tutorial that helped me further solidify my understanding of how Object Oriented Programming works in the context of JavaScript is from WebDevSimplified which can be found <a href="https://github.com/WebDevSimplified/Vanilla-JavaScript-Calculator">here</a>. Using this knowledge, I created some extra functions to meet my personal goals with the project such as preventing the user from entering more than one zero (0) if the whole number already starts with zero.
@@ -98,9 +102,3 @@ For example: "000000001" => "1"
 Further to this, I had also created a limit on how many numbers the user can enter in the calculator preventing the user from entering more than 11 numbers per operand.
 
 For example: "12345678901234567890" => "1234567890"
-
-## Improvements
-
--   Currently if the user enters the decimal ( . ), it replaces the the zero. This doesn't effect the functionality of the application, however, it does create an odd interface.
-
-    -   For example: instead of "0.123", the app displays ".123"
