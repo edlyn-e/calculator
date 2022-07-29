@@ -87,7 +87,7 @@ Having a plan is key to achieving goals. In this section, I have broken down the
 
 -   Calculator starts to get a squishy height-wise when it reaches 670px high and it holds it's width so it doesn't deform regardless of width
 
-Note:
+Note: I had used a mixture of viewport height, pixels and percentages. At the time it seems like a good idea, however, in hindsight, it doesn't take into account all screen sizes. As such, if I were to do this project again, I would stick to one medium of measurement (e.g. pixels) with the exception of using percentage for my border radius to get my perfect circles.
 
 ## Resources
 
