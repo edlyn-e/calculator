@@ -84,7 +84,7 @@ Having a plan is key to achieving goals. In this section, I have broken down the
 -   add 'erase' sound to 'BKSP' button
 
 ## Calculator App
-<img src="./calculator.png"/>
+<img src="./calculatorApp.png"/>
 
 ## Improvements
 
