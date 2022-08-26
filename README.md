@@ -34,39 +34,39 @@ Having a plan is key to achieving goals. In this section, I have broken down the
 
 ### HTML
 
--   :white_square_button: Calculator should maintain it's form regardless of window size
+-   [] Calculator should maintain it's form regardless of window size
 
--   :white_check_mark: Semantic coding
+-   [x] Semantic coding
 
 ### SCSS/CSS
 
--   :white_check_mark: Keys to imitate keys being pressed in real life
--   :white_check_mark: Operator keys to have 'focus' element to communicate they have been pressed
+-   [x] Keys to imitate keys being pressed in real life
+-   [x] Operator keys to have 'focus' element to communicate they have been pressed
 
 ### JavaScript
 
 #### General:
 
--   :white_check_mark: calculator keys should do something when pressed (extras can wait - see below)
+-   [x] calculator keys should do something when pressed (extras can wait - see below)
 -   when a number key is pressed:
-    -   :white_check_mark: number/s should display on the screen
-    -   :white_check_mark: number/s should be saved in app's memory until 'ON/C' button is registered
-    -   :white_check_mark: 0 (zero) should automatically be replaced when at the beginning of a whole number
--   :white_check_mark: there should be a 10 digit limit (11 character limit inclusive of decimal) for entries and solutions
--   :white_square_button: when the last digit on the entry is a zero (0), the zero should automatically be removed
+    -   [x] number/s should display on the screen
+    -   [x] number/s should be saved in app's memory until 'ON/C' button is registered
+    -   [x] 0 (zero) should automatically be replaced when at the beginning of a whole number
+-   [x] there should be a 10 digit limit (11 character limit inclusive of decimal) for entries and solutions
+-   [] when the last digit on the entry is a zero (0), the zero should automatically be removed
     -   this is invalid as it would mean the user cannot enter numbers that need to end with a 0 i.e. 10, 100, etc.
 
 #### Operator/Special Keys:
 
--   :white_check_mark: operator should render only once when entered regardless of how many times it is pressed.
+-   [x] operator should render only once when entered regardless of how many times it is pressed.
     -   For example: " 10 ++++++++++ 20 " :arrow_right: " 10 + 20 "
--   :white_check_mark: the same applies for decimals
+-   [x] the same applies for decimals
     -   For example: " 10 ....... 20 " :arrow_right: " 10.2 "
-    -   :white_check_mark: Note: (see above) when the last digit is a zero, it should automatically be removed.
--   :white_check_mark: back arrow should backspace/delete one character at a time
--   :white_check_mark: CE (cancel entry) button should clear the current entry of numbers but not the whole equation
--   :white_check_mark: ON/C button should reset the entire entry/equation
--   :white_square_button: the app should store the last solution to the equation unless cleared or reset
+    -   [x] Note: (see above) when the last digit is a zero, it should automatically be removed.
+-   [x] back arrow should backspace/delete one character at a time
+-   [x] CE (cancel entry) button should clear the current entry of numbers but not the whole equation
+-   [x] ON/C button should reset the entire entry/equation
+-   [] the app should store the last solution to the equation unless cleared or reset
     -   the app displays the solution to the equation until the user decides to chain operations or to clear display
 
 #### Extras
@@ -84,6 +84,7 @@ Having a plan is key to achieving goals. In this section, I have broken down the
 -   add 'erase' sound to 'BKSP' button
 
 ## Calculator App
+
 <img src="./calculatorApp.png"/>
 
 ## Improvements
