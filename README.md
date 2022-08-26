@@ -83,6 +83,9 @@ Having a plan is key to achieving goals. In this section, I have broken down the
 -   add 'clear' sound to "ON/C" button
 -   add 'erase' sound to 'BKSP' button
 
+## Calculator App
+<img src="./calculatorApp.png"/>
+
 ## Improvements
 
 -   Calculator starts to get a squishy height-wise when it reaches 670px high and it holds it's width so it doesn't deform regardless of width
