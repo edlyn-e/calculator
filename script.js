@@ -81,7 +81,11 @@ class Calculator {
                 return;
         }
 
-        this.firstValue = calculation.toPrecision(10);
+        this.firstValue =
+            calculation.toString().length < 10
+                ? calculation.toString()
+                : calculation.toExponential(10).toString();
+        console.log(this.firstValue);
         this.operator = undefined;
         this.secondValue = "";
     }
